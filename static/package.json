@@ -1,0 +1,38 @@
+{
+  "name": "stock-visualizer",
+  "version": "1.0.0",
+  "description": "Displays real-time stock data in visual charts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --progress -d --config webpack.config.js -watch",
+    "build": "",
+    "dev-build": "",
+    "start": "http-server",
+    "webpack": "webpack",
+    "babel": "babel --presets es2015 js/index.js -o dist/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zcliang97/stock-visualizer.git"
+  },
+  "author": "Frank Liang <frank97liang@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zcliang97/stock-visualizer/issues"
+  },
+  "homepage": "https://github.com/zcliang97/stock-visualizer#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-loader": "^7.1.2",
+    "react-dom": "^16.2.0",
+    "webpack": "^3.10.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  }
+}

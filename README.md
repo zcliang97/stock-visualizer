@@ -22,11 +22,21 @@ Then download the project.
 
 > Click the "Clone or Download" button above to download the project.
 
+Setup npm
+
+> `npm init`
+> Enter any values that you want but can skip by pressing Enter
+
+> `npm install`
+
+Setup Webpack
+
+> `npm i webpack --save-dev`
+
+Setup React
+
+> `npm i react --save-dev`
 
 ## Libraries
 
 Plotly.js: https://github.com/plotly/plotly.js/
-
-
-
-
