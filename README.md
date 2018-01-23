@@ -37,6 +37,15 @@ Setup React
 
 > `npm i react --save-dev`
 
+Setup Flask (Backend)
+
+> `sudo pip install flask`
+
+Starting up the website
+
+> For the Frontend: `npm run webpack`
+> For the Backend: `python server.py`
+
 ## Libraries
 
 Plotly.js: https://github.com/plotly/plotly.js/
