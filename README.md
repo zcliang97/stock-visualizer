@@ -7,16 +7,16 @@ This is a stock visualization tool that is built to help users visualize selecti
 
 Install Node.js
 
-*For Windows/Mac:*
-Go to https://nodejs.org/en/download/ and download the appropriate file.
-
-*For Linux:*
-Open the terminal and run the following commands:
-
-`sudo curl -sL https://deb.nodesource.com/setup_8.x -o setup.sh`<br>
-`sudo bash setup.sh`<br>
-`sudo apt-get install nodejs`<br>
-`sudo apt-get install build-essential`<br>
+> *For Windows/Mac:* <br>
+> Go to https://nodejs.org/en/download/ and download the appropriate file.
+>
+> *For Linux:* <br>
+> Open the terminal and run the following commands:
+>
+> `sudo curl -sL https://deb.nodesource.com/setup_8.x -o setup.sh`<br>
+> `sudo bash setup.sh`<br>
+> `sudo apt-get install nodejs`<br>
+> `sudo apt-get install build-essential`<br>
 
 Then download the project
 
