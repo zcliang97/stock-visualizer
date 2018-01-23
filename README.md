@@ -18,8 +18,15 @@ Install Node.js
 > `sudo apt-get install nodejs`<br>
 > `sudo apt-get install build-essential`<br>
 
-Then download the project
+Then download the project.
 
-Click the "Clone or Download" button to download the project. Afterwards, unzip the file.
+> Click the "Clone or Download" button above to download the project.
+
+
+## Libraries
+
+Plotly.js: https://github.com/plotly/plotly.js/
+
+
 
 
