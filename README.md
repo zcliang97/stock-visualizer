@@ -12,12 +12,11 @@ For Windows:
 For Linux:
 
 Install the *.deb file and run the following commands from terminal
-    Note: Replace '8.X' with the desired version but the default should be fine
 
-`sudo curl -sL https://deb.nodesource.com/setup_8.x -o setup.sh`
-`sudo bash setup.sh`
-`sudo apt-get install nodejs`
-`sudo apt-get install build-essential`
+`sudo curl -sL https://deb.nodesource.com/setup_8.x -o setup.sh`<br>
+`sudo bash setup.sh`<br>
+`sudo apt-get install nodejs`<br>
+`sudo apt-get install build-essential`<br>
 
 
 
