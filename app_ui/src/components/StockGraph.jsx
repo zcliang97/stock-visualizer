@@ -15,8 +15,8 @@ export default class StockGraph extends React.Component {
             Plotly.newPlot(graphDiv,
                 [{
                     type: 'scatter',
-                    x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                    y: [2, 4, 1, 8, 12, 21, 2, 4, 12, 31]
+                    x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+                    y: [2, 4, 1, 8, 12, 21, 2, 4, 12, 31, 5]
                 }],
                 {
                     margin: { t: 20, b: 80, l: 70, r: 70},
