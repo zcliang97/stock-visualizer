@@ -32,10 +32,17 @@ Setup npm
 Setup Webpack
 
 > `npm i webpack --save-dev`
+> `npm i webpack-dev-server --save-dev`
 
 Setup React
 
 > `npm i react --save-dev`
+
+Setup Babel
+
+> `npm i babel --save-dev`
+> `npm i babel-core --save-dev`
+
 
 Setup Flask (Backend)
 
@@ -43,7 +50,7 @@ Setup Flask (Backend)
 
 Starting up the website
 
-> For the Frontend: `npm run webpack`
+> For the Frontend: `npm run start-dev`s
 > For the Backend: `python server.py`
 
 ## Libraries
