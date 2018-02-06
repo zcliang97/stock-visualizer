@@ -58,5 +58,5 @@ Starting up the website
 
 ## External References
 
-Plotly.js: https://github.com/plotly/plotly.js/
-Alpha Advantage: https://www.alphavantage.co/
+- Plotly.js: https://github.com/plotly/plotly.js/
+- Alpha Advantage: https://www.alphavantage.co/
