@@ -2,6 +2,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
     context: path.resolve(__dirname, 'src'),
@@ -31,6 +32,7 @@ const config = {
         host: '0.0.0.0',
         hot: true,
         compress: true,
+        port: 8080,
         contentBase: path.resolve(__dirname, 'dist'),
         publicPath: '/dist/js/',
         historyApiFallback: true,
@@ -45,13 +47,25 @@ const config = {
                 test: /\.jsx?/,
                 exclude: /node_modules/,
                 use: ['babel-loader']
-            }
+            },
+            {
+                test: /\.css$/,
+                loader: 'style-loader'
+              }, {
+                test: /\.css$/,
+                loader: 'css-loader',
+                query: {
+                  modules: true,
+                  localIdentName: '[name]__[local]___[hash:base64:5]'
+                }
+              }
         ]
     },
 
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin()
+        new webpack.NamedModulesPlugin(),
+        new ExtractTextPlugin('styles.css')
     ],
     watch: true,
     watchOptions: {

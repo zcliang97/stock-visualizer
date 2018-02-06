@@ -8,6 +8,15 @@ export default class StockGraph extends React.Component {
 
     }
 
+    addStockToGraph(){
+        let input = document.getElementById('stock-input').value;
+        console.log('Adding stock: ' + input + ' to graph...');
+    }
+
+    postStockRequest(){
+        console.log('Posted stock request');
+    }
+
     render(){
         let graphDiv = document.getElementById('graph');
         
@@ -35,8 +44,19 @@ export default class StockGraph extends React.Component {
         }
         
         return(
-            <div style={{backgroundColor: '#152935'}}>
-                <div id="graph" style={{width: '60%', height: '100%'}}></div>
+            <div>
+                <div style={{backgroundColor: '#152935'}}>
+                    <div id="graph" style={{width: '60%', height: '100%'}}></div>
+                </div>
+                <div>
+                    <form className="form-inline" onSubmit={ this.postStockRequest.bind(this) }>
+                        <label className="sr-only txt-style">Username</label>
+                        <div className="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <input id='stock-input' type="text" className="form-control" placeholder="GOOG" />
+                        </div>
+                        <button type="submit" className="btn btn-primary">Submit</button>
+                    </form>
+                </div>
             </div>
         )
     }

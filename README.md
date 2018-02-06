@@ -17,6 +17,7 @@ Install Node.js
 > `sudo bash setup.sh`<br>
 > `sudo apt-get install nodejs`<br>
 > `sudo apt-get install build-essential`<br>
+> `sudo apt-get install python-flask`<br>
 
 Then download the project.
 
@@ -48,11 +49,14 @@ Setup Flask (Backend)
 
 > `sudo pip install flask`
 
+> `sudo pip install requests`
+
 Starting up the website
 
 > For the Frontend: `npm run start-dev`s
-> For the Backend: `python server.py`
+> For the Backend: `./run.sh`
 
-## Libraries
+## External References
 
 Plotly.js: https://github.com/plotly/plotly.js/
+Alpha Advantage: https://www.alphavantage.co/
