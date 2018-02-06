@@ -1,7 +1,7 @@
 # Stock Visualizer
 
 ## Description
-This is a stock visualization tool that is built to help users visualize selective stocks in real time. This project pulls data from ___ API and plots the data with the Plotly.js library.
+This is a stock visualization tool that is built to help users visualize selective stocks in real time. This project pulls live data from online APIs and plots the data with the Plotly.js library.
 
 ## Install Instructions
 
