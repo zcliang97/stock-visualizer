@@ -1,26 +1,36 @@
 import React from 'react';
 import Plotly from 'plotly.js/dist/plotly';
+import { stockAPIs } from '../api';
 
 export default class StockGraph extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
 
     }
 
-    addStockToGraph(){
+    addStockToGraph() {
         let input = document.getElementById('stock-input').value;
         console.log('Adding stock: ' + input + ' to graph...');
     }
 
-    postStockRequest(){
+    postStockRequest() {
         console.log('Posted stock request');
+        let data = {
+
+        }
+        stockAPIs.postStockData(data);
     }
 
-    render(){
+    getStockData() {
+        console.log('Getting stock data');
+        stockAPIs.getStockData();
+    }
+
+    render() {
         let graphDiv = document.getElementById('graph');
-        
-        if(graphDiv !== null){
+
+        if (graphDiv !== null) {
             Plotly.newPlot(graphDiv,
                 [{
                     type: 'scatter',
@@ -28,7 +38,7 @@ export default class StockGraph extends React.Component {
                     y: [2, 4, 1, 8, 12, 21, 2, 4, 12, 31, 5, 12, 45, 28, 60, 79]
                 }],
                 {
-                    margin: { t: 20, b: 80, l: 70, r: 70},
+                    margin: { t: 20, b: 80, l: 70, r: 70 },
                     showlegend: false,
                     paper_bgcolor: '#152935',
                     plot_bgcolor: '#152935',
@@ -40,16 +50,16 @@ export default class StockGraph extends React.Component {
                     }
                 }
             );
-            window.addEventListener("resize", function() { Plotly.Plots.resize(graphDiv)} );
+            window.addEventListener("resize", function () { Plotly.Plots.resize(graphDiv) });
         }
-        
-        return(
+
+        return (
             <div>
-                <div style={{backgroundColor: '#152935'}}>
-                    <div id="graph" style={{width: '60%', height: '100%'}}></div>
+                <div style={{ backgroundColor: '#152935' }}>
+                    <div id="graph" style={{ width: '60%', height: '100%' }}></div>
                 </div>
                 <div>
-                    <form className="form-inline" onSubmit={ this.postStockRequest.bind(this) }>
+                    <form className="form-inline" onSubmit={this.postStockRequest.bind(this)}>
                         <label className="sr-only txt-style">Username</label>
                         <div className="input-group mb-2 mr-sm-2 mb-sm-0">
                             <input id='stock-input' type="text" className="form-control" placeholder="GOOG" />

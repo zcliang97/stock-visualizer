@@ -1,4 +1,4 @@
-#ini file
+# ini file
 
 import os.path
 import sys
