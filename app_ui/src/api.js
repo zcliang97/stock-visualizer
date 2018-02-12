@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 const stockAPIs = {
-    getStockData: function () {
+    getStockData: function (data) {
         return new Promise((resolve, reject) => {
-            axios.get('api/stock_data')
+            axios.get('api/stock_data', data)
                 .then((response) => {
                     if (response.status === 200) {
                         resolve(response.data);
@@ -33,6 +33,6 @@ const stockAPIs = {
                 });
         });
     }
-},
+}
 
-export { stockAPIs, }
+export { stockAPIs }

@@ -51,6 +51,8 @@ Setup Flask (Backend)
 
 > `sudo pip install requests`
 
+> `sudo pip install sqlalchemy`
+
 Starting up the website
 
 > For the Frontend: `npm run start-dev`s

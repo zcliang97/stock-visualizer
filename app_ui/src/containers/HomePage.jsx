@@ -8,11 +8,13 @@ class HomePage extends React.Component{
 
     render(){
         return(
-            <div className='container' style={{width: '100', backgroundColor: '#1C2D35'}}>
-                <div style={{height: '30px', fontSize: '30px', color: 'white', paddingBottom: '25px'}}>
-                    Real Time Visualization
+            <div style={{backgroundColor: '#E8E8E8', height: '100vh'}}>
+                <div className='container'>
+                    <label style={{height: '30px', fontSize: '30px', marginBottom: '25px'}}>
+                        Real Time Visualization
+                    </label>
+                    <StockGraph />
                 </div>
-                <StockGraph />
             </div>
         )
     }
