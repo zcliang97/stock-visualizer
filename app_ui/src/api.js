@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 const stockAPIs = {
-    getStockData: function (data) {
+    getStockData: function (ticker) {
         return new Promise((resolve, reject) => {
-            axios.get('api/stock_data', data)
+            axios.get(`api/stock_data/${ticker}`)
                 .then((response) => {
                     if (response.status === 200) {
                         resolve(response.data);

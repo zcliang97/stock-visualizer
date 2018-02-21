@@ -8,9 +8,7 @@ __author__ = 'Frank Liang'
 import json
 import datetime
 import requests
-from flask import Flask, make_response
-from app import app
-from flask import make_response, request
+from flask import Flask, make_response, request
 from app import app
 from app.data import data_access_layer, db_bridge
 from app.data.data_model import Stock

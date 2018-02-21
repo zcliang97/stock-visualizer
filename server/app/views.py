@@ -7,8 +7,7 @@ import logging
 from flask import render_template, request
 
 from server import app
-from server.data import db_bridge
-from server.apis import stock_data_rest.py
+from server.data import db_bridge, stock_data_rest
 
 app.config.from_object(__name__)
 app.config.update(
@@ -41,4 +40,4 @@ def index():
     Returns the index template
     """
     return render_template(
-        'index.html', app_mode='app_mode'
+        'index.html'

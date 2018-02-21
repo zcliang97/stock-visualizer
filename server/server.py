@@ -13,12 +13,15 @@ from app.data.data_model import Stock
 app = Flask(__name__,  static_folder="../static/dist",
             template_folder="../static")
 
+
 def get_auth_key():
     return json.load(open('keys.json'))['maps']['AlphaAdvantage']
+
 
 @app.route("/")
 def index():
     return render_template("index.html")
+
 
 if __name__ == "__main__":
     app.run()

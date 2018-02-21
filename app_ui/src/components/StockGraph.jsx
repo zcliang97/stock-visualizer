@@ -22,14 +22,14 @@ export default class StockGraph extends React.Component {
         stockAPIs.postStockData(obj);
     }
 
-    addStockToGraph(){
+    addStockToGraph() {
         let input = document.getElementById('stock-input');
 
-        if(input !== null){
+        if (input !== null) {
             let ticker = input.value;
             console.log('Adding stock: ' + input + ' to graph...');
             stockAPIs.getStockData(ticker)
-                .then((response) =>{
+                .then((response) => {
                     this.setState({ ticker: response.data })
                     console.log(response.data);
                 })
@@ -72,23 +72,23 @@ export default class StockGraph extends React.Component {
         return (
             <div>
                 <div id="graph" style={{ width: '75%', height: '450px', backgroundColor: '#152935', float: 'left' }}></div>
-                <div className='container' style={{ width: '20%', float: 'right', backgroundColor: 'white', borderRadius: '10px', marginBottom: '20px', padding: '10px 10px 10px 10px'}}>
+                <div className='container' style={{ width: '20%', float: 'right', backgroundColor: 'white', borderRadius: '10px', marginBottom: '20px', padding: '10px 10px 10px 10px' }}>
                     <div>
-                        <label style={{ fontSize: '20px', marginRight: '2%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}>
+                        <label style={{ fontSize: '20px', marginRight: '2%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                             Add Stock
                         </label>
                         <div className="input-group mb-2 mr-sm-2 mb-sm-0">
                             <input id='stock-input' type="text" className="form-control" placeholder="ex. GOOG" />
                         </div>
-                        <button className="btn btn-primary" style={{ float: 'right', marginTop: '10px'}} onClick={this.addStockToGraph}>Add</button>
+                        <button className="btn btn-primary" style={{ float: 'right', marginTop: '10px' }} onClick={this.addStockToGraph}>Add</button>
                     </div>
                 </div>
-                <div className='container' style={{ width: '20%', float: 'right', backgroundColor: 'white', borderRadius: '10px', padding: '10px 10px 10px 10px'}}>
-                    <label style={{ fontSize: '20px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}>
+                <div className='container' style={{ width: '20%', float: 'right', backgroundColor: 'white', borderRadius: '10px', padding: '10px 10px 10px 10px' }}>
+                    <label className='txt_style' style={{ fontSize: '20px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                         Current Stocks
                     </label>
                     <div>
-                        
+
                     </div>
                 </div>
             </div>
