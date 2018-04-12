@@ -20,12 +20,17 @@ def get_auth_key():
 
 @app.route('/api/stock_data/<ticker>', methods=['GET'])
 def get_stock_data(ticker):
+    print "1234"
     url = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=' + \
         ticker + '&interval=1min&apikey=' + get_auth_key()
     response = requests.get(url, verify=False, timeout=30)
+    print "123"
 
     return make_response(response.content, response.status_code)
 
+@app.route('/api/test', methods=['GET'])
+def test():
+    return "123"
 
 @app.route('/api/stock_data', methods=['GET'])
 def get_stocks():

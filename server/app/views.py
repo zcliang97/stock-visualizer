@@ -32,12 +32,3 @@ def clear_db_session(self):
     """
     pass
     # DB_SESSION.remove()
-
-
-@app.route('/index')
-def index():
-    """
-    Returns the index template
-    """
-    return render_template(
-        'index.html'
