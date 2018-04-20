@@ -7,6 +7,7 @@ export default class StockGraph extends React.Component {
         super(props);
 
         this.state = {
+            tickers: [],
             currStocks: []
         }
 
