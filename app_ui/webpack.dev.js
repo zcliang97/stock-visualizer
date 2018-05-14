@@ -38,7 +38,10 @@ const config = {
         historyApiFallback: true,
 
         proxy: {
-            "/api": 'http://0.0.0.0:5000'
+            "/api": {
+                'target': 'http://localhost:5000', //http://0.0.0.0:5000 had to change to localhost due to browser security for Chrome
+                'changeOrigin': true,
+            }
         }
     },
     module: {

@@ -62,3 +62,11 @@ Starting up the website
 
 - Plotly.js: https://github.com/plotly/plotly.js/
 - Alpha Advantage: https://www.alphavantage.co/
+
+
+## Setup for Windows
+
+> To get pip for windows, download the file at https://bootstrap.pypa.io/get-pip.py
+> To to the file location in cmd.exe and run `python get-pip.py --user`
+> Add C:\\[python_folder_path]\\scripts to the system path
+> Restart cmd.exe and for future pip installs, use `python -m pip [package_name]`
