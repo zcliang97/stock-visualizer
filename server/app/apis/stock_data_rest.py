@@ -14,6 +14,12 @@ import requests
 def get_auth_key():
     return json.load(open('data.json'))['keys']['AlphaAdvantage']
 
+def format_stock_data(inData):
+    data = {}
+    for key in sorted(inData.iterkeys()):
+        data[key]= float('%.3f' % float(inData[key]['1. open']))
+    return data
+
 @app.route('/api/stock_data/<ticker>', methods=['GET'])
 def get_stock_data(ticker):
     url = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=' + \
@@ -24,7 +30,7 @@ def get_stock_data(ticker):
         json.dumps({
             'ticker': ticker,
             'meta_data': json.loads(response.content)['Meta Data'],
-            'data': json.loads(response.content)['Time Series (1min)']
+            'data': format_stock_data(json.loads(response.content)['Time Series (1min)'])
         }), 200)
 
 @app.route('/api/post_stock_data', methods=['POST'])

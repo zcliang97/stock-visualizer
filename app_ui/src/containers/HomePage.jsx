@@ -11,7 +11,7 @@ class HomePage extends React.Component{
             <div style={{backgroundColor: '#E8E8E8', height: '100vh'}}>
                 <div className='container'>
                     <label style={{height: '30px', fontSize: '30px', marginBottom: '25px'}}>
-                        Real Time Visualization
+                        Stock Visualization
                     </label>
                     <StockGraph />
                 </div>

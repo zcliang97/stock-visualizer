@@ -1,14 +1,14 @@
 import React from 'react';
 import Plotly from 'plotly.js/dist/plotly';
 import { stockAPIs } from '../api';
+import { dataUtils } from '../../helper/dataUtils';
 
 export default class StockGraph extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            tickers: [],
-            currStocks: []
+            tickers: {},
         }
 
         this.addStockToGraph = this.addStockToGraph.bind(this);
@@ -31,32 +31,21 @@ export default class StockGraph extends React.Component {
             console.log('Adding stock: ' + input + ' to graph...');
             stockAPIs.getStockData(ticker)
                 .then((response) => {
-                    this.setState({ ticker: response.data })
-                    console.log(response.data);
+                    this.state.tickers[ticker] = response.data
+                    this.setState({ tickers: this.state.tickers }, () => { console.log(this.state.tickers)})
                 })
         }
     }
 
     render() {
         let graphDiv = document.getElementById('graph');
+        let data = dataUtils.getStockData(this.state.tickers)//dataUtils.getMockStockData()
 
         if (graphDiv !== null) {
-            Plotly.newPlot(graphDiv,
-                [{
-                    name: 'Apple',
-                    type: 'scatter',
-                    x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
-                    y: [2, 4, 1, 8, 12, 21, 2, 4, 12, 31, 5, 12, 45, 28, 60, 79]
-                },
-                {
-                    name: 'Google',
-                    type: 'scatter',
-                    x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
-                    y: [1, 8, 3, 4, 4, 2, 12, 16, 19, 20, 40, 35, 32, 36, 39, 42]
-                }],
+            Plotly.newPlot(graphDiv, data,
                 {
                     margin: { t: 20, b: 80, l: 70, r: 70 },
-                    showlegend: false,
+                    showlegend: true,
                     paper_bgcolor: '#152935',
                     plot_bgcolor: '#152935',
                     xaxis: {
@@ -89,8 +78,19 @@ export default class StockGraph extends React.Component {
                         Current Stocks
                     </label>
                     <div>
-
+                        <ol>
+                        {
+                            Object.keys(this.state.tickers).map((ticker) => {
+                                return(
+                                    <li> {ticker} </li>
+                                )
+                            })
+                        }
+                        </ol>
                     </div>
+                    <button className="btn btn-primary" style={{ float: 'right', marginTop: '10px' }} onClick={() => { this.setState({ tickers: {} })}}>
+                        Clear
+                    </button>
                 </div>
             </div>
         )
