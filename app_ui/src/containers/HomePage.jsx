@@ -3,7 +3,7 @@ import StockGraph from '../components/StockGraph.jsx';
 
 class HomePage extends React.Component{
     constructor(props){
-        super(props);
+        super(props)
     }
 
     render(){
@@ -20,4 +20,4 @@ class HomePage extends React.Component{
     }
 }
 
-export default HomePage;
+export default HomePage

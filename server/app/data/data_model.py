@@ -29,3 +29,22 @@ class Stock(BASE):
             user_name=self.user_name,
             public_access_key=self.public_access_key,
             secret_access_key=self.secret_access_key)
+
+
+class Ticker(BASE):
+    '''Represents a ticker object'''
+
+    __tablename__ = 'tickers'
+    id = Column(Integer, primary_key=True)
+    ticker = Column(Text)
+    name = Column(Text)
+
+    def __repr__(self):
+        return "<Ticker(ticker='%s', name='%s')>" % (
+            self.ticker, self.name)
+
+    def to_dict(self):
+        '''return a dictionary representation of the data'''
+        return dict(
+            ticker=self.ticker,
+            name=self.name)

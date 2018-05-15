@@ -59,7 +59,8 @@ Setup Flask (Backend)
 
 Starting up the website
 
-> For the Frontend: `npm run start-dev`s
+> For the Frontend: `npm run start-dev`
+
 > For the Backend: `./run.sh`
 
 ## External References
@@ -71,6 +72,15 @@ Starting up the website
 ## Setup for Windows
 
 > To get pip for windows, download the file at https://bootstrap.pypa.io/get-pip.py
+
 > To to the file location in cmd.exe and run `python get-pip.py --user`
+
 > Add C:\\[python_folder_path]\\scripts to the system path
+
 > Restart cmd.exe and for future pip installs, use `python -m pip [package_name]`
+
+##TO DOs
+
+> Single ticker magnification (filtering)
+
+> Save tickers in db

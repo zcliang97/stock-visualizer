@@ -78,15 +78,17 @@ export default class StockGraph extends React.Component {
                         Current Stocks
                     </label>
                     <div>
-                        <ol>
+                        <div>
                         {
                             Object.keys(this.state.tickers).map((ticker) => {
                                 return(
-                                    <li> {ticker} </li>
+                                    <div>
+                                        <input type='checkbox'></input> {ticker}
+                                    </div>
                                 )
                             })
                         }
-                        </ol>
+                        </div>
                     </div>
                     <button className="btn btn-primary" style={{ float: 'right', marginTop: '10px' }} onClick={() => { this.setState({ tickers: {} })}}>
                         Clear

@@ -33,19 +33,18 @@ def get_stock_data(ticker):
             'data': format_stock_data(json.loads(response.content)['Time Series (1min)'])
         }), 200)
 
-@app.route('/api/post_stock_data', methods=['POST'])
-def post_single_user():
-    account, is_new = data_access_layer._get_or_create(
+@app.route('/api/ticker', methods=['POST'])
+def post_ticker():
+    ticker, is_new = data_access_layer._get_or_create(
         db_bridge.get_db_session(),
-        Stock,
-        user_name=request.json[0],
-        public_access_key=request.json[1],
-        secret_access_key=request.json[2])
+        Ticker,
+        ticker=request.json[0],
+        name=request.json[1])
 
     response = make_response(
         json.dumps({
-            'accounts': {
-                'user_name': account.user_name,
+            'ticker': {
+                'symbol': ticker.ticker,
                 'is_new': is_new
             },
             'status': 'SUCCESS'
@@ -55,15 +54,15 @@ def post_single_user():
     return response
 
 
-@app.route('/api/stocks_data', methods=['GET'])
-def get_stocks():
-    '''Get the list of stocks'''
+@app.route('/api/tickers', methods=['GET'])
+def get_tickers():
+    '''Get the list of tickers'''
     try:
-        all_stock = data_access_layer._get_all(db_bridge.get_db_session(),
-                                               Stock)
+        tickers = data_access_layer._get_all(db_bridge.get_db_session(),
+                                               Ticker)
         return make_response(
             json.dumps(
-                all_stock, default=lambda user_object: user_object.to_dict()),
+                tickers, default=lambda ticker_object: ticker_object.to_dict()),
             200)
 
     except Exception as ex:

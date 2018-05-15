@@ -5,9 +5,9 @@
 __author__ = "Frank Liang"
 
 
-class Stock(object):
-    '''Represents a Stock object'''
+class Ticker(object):
+    '''Represents a Ticker object'''
 
-    def __init__(self, ticker, prices):
+    def __init__(self, ticker, name):
         self.ticker = ticker
-        self.prices = prices
+        self.name = name
